@@ -71,43 +71,22 @@ model_config:
       - remote_url
       - local_file
     number_limits: 3
-  model:
+    model:
     completion_params:
       stop: []
     mode: chat
-    name: deepseek-ai/DeepSeek-V3
+    name: deepseek-ai/deepseek-v3
     provider: langgenius/siliconflow/siliconflow
   more_like_this:
     enabled: false
-  opening_statement: ''
-  pre_prompt: 'Eres el asistente virtual de Pablo. Tu objetivo es responder preguntas
-    sobre su perfil profesional basándote en la información de su Currículum Vitae
-    adjunto. Responde siempre en español, con tono claro y profesional. Si te preguntan
-    algo sobre sus estudios o experiencia, busca minuciosamente en el documento adjunto
-    antes de responder."
-
-
-
-
-
-
-
-    '
-  prompt_type: simple
-  retriever_resource:
-    enabled: true
-  sensitive_word_avoidance:
-    config: {}
-    enabled: false
-    type: ''
-  speech_to_text:
-    enabled: false
-  suggested_questions: []
+  opening_statement: "¡Hola! 👋 Bienvenido al asistente virtual de Pablo. Estoy aquí para ayudarte a conocer su trayectoria, habilidades y experiencia profesional basado en su Currículum Vitae. ¿Qué te gustaría saber sobre su perfil?"
+  pre_prompt: 'eres el asistente virtual de pablo. tu objetivo es responder preguntas sobre su perfil profesional basándote en la información de su currículum vitae. sé sumamente educado, claro y conciso. busca minuciosamente en el documento adjunto antes de responder.'
+  suggested_questions:
+    - "¿Cuál es la experiencia principal de Pablo?"
+    - "¿Qué tecnologías o habilidades técnicas domina?"
+    - "¿Cuáles han sido sus proyectos más importantes?"
   suggested_questions_after_answer:
-    enabled: false
+    enabled: true
   text_to_speech:
     enabled: false
-    language: ''
-    voice: ''
-  user_input_form: []
-version: 0.6.0
+

@@ -6,23 +6,63 @@ app:
   mode: agent-chat
   name: AsistentePerfil
   use_icon_as_answer_icon: false
-dependencies: []
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/siliconflow:0.0.53@0a8239a7fa4cc3b5f880fb9ca54e91b67377738bcc904fd6943a2a66bc80bed1
+    version: null
 kind: app
 model_config:
   agent_mode:
-    enabled: false
+    enabled: true
+    max_iteration: 10
     prompt: null
-    strategy: null
+    strategy: react
     tools: []
   annotation_reply:
     enabled: false
-  chat_prompt_config: {}
-  completion_prompt_config: {}
+  chat_prompt_config:
+    prompt:
+    - role: system
+      text: ''
+  completion_prompt_config:
+    conversation_histories_role:
+      assistant_prefix: ''
+      user_prefix: ''
+    prompt:
+      text: ''
   dataset_configs:
+    datasets:
+      datasets:
+      - dataset:
+          enabled: true
+          id: 15be57d8-96b8-4191-8ea3-df34533f0139
+    reranking_mode: reranking_model
+    reranking_model:
+      reranking_model_name: netease-youdao/bce-reranker-base_v1
+      reranking_provider_name: langgenius/siliconflow/siliconflow
     retrieval_model: multiple
-  dataset_query_variable: null
+    top_k: 4
+  dataset_query_variable: ''
   external_data_tools: []
   file_upload:
+    allowed_file_extensions:
+    - .JPG
+    - .JPEG
+    - .PNG
+    - .GIF
+    - .WEBP
+    - .SVG
+    - .MP4
+    - .MOV
+    - .MPEG
+    - .WEBM
+    allowed_file_types: []
+    allowed_file_upload_methods:
+    - remote_url
+    - local_file
+    enabled: false
     image:
       detail: high
       enabled: false
@@ -30,15 +70,29 @@ model_config:
       transfer_methods:
       - remote_url
       - local_file
+    number_limits: 3
   model:
-    completion_params: {}
+    completion_params:
+      stop: []
     mode: chat
-    name: gpt-4o
-    provider: openai
+    name: deepseek-ai/DeepSeek-V3
+    provider: langgenius/siliconflow/siliconflow
   more_like_this:
     enabled: false
-  opening_statement: null
-  pre_prompt: null
+  opening_statement: ''
+  pre_prompt: 'Eres el asistente virtual de Pablo. Tu objetivo es responder preguntas
+    sobre su perfil profesional basándote en la información de su Currículum Vitae
+    adjunto. Responde siempre en español, con tono claro y profesional. Si te preguntan
+    algo sobre sus estudios o experiencia, busca minuciosamente en el documento adjunto
+    antes de responder."
+
+
+
+
+
+
+
+    '
   prompt_type: simple
   retriever_resource:
     enabled: true
@@ -53,5 +107,7 @@ model_config:
     enabled: false
   text_to_speech:
     enabled: false
+    language: ''
+    voice: ''
   user_input_form: []
 version: 0.6.0
